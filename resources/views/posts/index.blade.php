@@ -8,20 +8,22 @@
     </a>
 </div>
 
-<table class='text-red-800 bg-orange-300'>
+<table class='text-green-500 bg-orange-300 border-double border-8 border-teal-500'>
     <thead>
         <th>ID</th>
         <th>Title</th>
         <th>Body</th>
+        <th>Comments</th>
         <th>Author name</th>
         <th>Actions</th>
     </thead>
     <tbody>
         @foreach($posts as $post)
-            <tr>
-                <td>{{ $post->id }}</td>
+            <tr class='text-green-500'>
+                <td >{{ $post->id }}</td>
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->body }}</td>
+                <td>{{ $post->comments }}</td>
                 <td>{{ $post->author_name }}</td>
                 <td>
                     <a href="{{ route('posts.show', ['post' => $post->id]) }}">
